@@ -20,8 +20,8 @@ function populateData() {
   const savedData = localStorage.getItem(STORAGE_KEY);
   if (savedData) {
     formData = JSON.parse(savedData);
-    refs.textarea.value = formData.message || "";
-    refs.mail.value = formData.email || "";
+    refs.textarea.value = formData.message || '';
+    refs.mail.value = formData.email || '';
   }
 }
 
