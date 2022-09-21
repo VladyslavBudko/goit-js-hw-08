@@ -27,6 +27,12 @@ function populateData() {
 
 function onFormSubmit(evt) {
   evt.preventDefault();
+  if (!refs.textarea.value || !refs.mail.value) {
+    confirm('Please enter all data!');
+    return;
+  }
+  console.log(formData);
+
   evt.currentTarget.reset();
   formData = {};
   localStorage.removeItem(STORAGE_KEY);
@@ -35,7 +41,6 @@ function onFormSubmit(evt) {
 function onTextareaInput() {
   refs.form.addEventListener('input', evt => {
     formData[evt.target.name] = evt.target.value;
-    console.log(formData);
   });
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
